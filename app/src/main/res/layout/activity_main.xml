@@ -1,0 +1,205 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@color/backgroundColor">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PrincipalAmountTV"
+        android:text="@string/AmntBorrow"
+        android:textColor="@color/labelColor"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:textSize="17dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PrincipalAmountET"
+        android:ems = "10"
+        android:inputType="numberDecimal|numberSigned"
+        android:hint="Enter the loan amount"
+        android:layout_below="@+id/PrincipalAmountTV"
+        android:layout_alignParentStart="true"
+        android:textSize="17dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ff148b77"
+        android:textColorHint="#ff148b77"
+        android:background="@drawable/custom_edittext"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/InterestTV"
+        android:text="@string/interest"
+        android:textColor="#ffff792d"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/PrincipalAmountET"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/displayInterestTV"
+        android:layout_toRightOf="@id/InterestTV"
+        android:layout_below="@+id/PrincipalAmountET"
+        android:paddingLeft="5dp"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/resultColor"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="2dp" />
+
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+        android:paddingLeft="5dp" android:paddingRight="5dp" android:paddingTop="5dp"
+        android:layout_weight="1"
+        android:id="@+id/interestSeekBar"
+        android:layout_below="@+id/InterestTV"
+        android:max="2000"
+        android:progress="1000"
+        android:progressTint="@color/textColor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TermTV"
+        android:text="@string/TermText"
+        android:textColor="#ffff792d"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/interestSeekBar"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_marginTop="5dp" />
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TermTV"
+        android:id="@+id/TermRadioGroup"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year15"
+            android:id="@+id/term15Rb"
+            android:checked="true"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/TermTV"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="false"
+            android:textSize="15dp"
+            android:buttonTint="@color/textColor" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year20"
+            android:id="@+id/term20Rb"
+            android:layout_below="@+id/TermTV"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/textColor"
+            android:textSize="15dp"
+            android:buttonTint="@color/textColor" />
+
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year30"
+            android:id="@+id/term30Rb"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/term15Rb"
+            android:layout_alignParentStart="true"
+            android:textSize="15dp"
+            android:buttonTint="@color/textColor" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taxes"
+        android:id="@+id/TaxTv"
+        android:layout_below="@+id/TermRadioGroup"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="7dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:textColor="#ffff792d" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taxes_insurance_include"
+        android:id="@+id/TaxChkBox"
+        android:layout_below="@+id/TaxTv"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:buttonTint="@color/textColor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calc"
+        android:id="@+id/calculateBtn"
+        android:onClick="onClick"
+        android:background="@drawable/custom_button"
+        android:layout_below="@+id/TaxChkBox"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:width="250dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Result"
+        android:id="@+id/monthlyPayTV"
+        android:enabled="false"
+        android:textColor="@color/resultColor"
+        android:textStyle="bold"
+        android:layout_below="@+id/calculateBtn"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp"
+        android:textSize="22dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minInterest"
+        android:id="@+id/minInterestTV"
+        android:layout_below="@+id/InterestTV"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/resultColor"
+        android:textSize="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/maxInterest"
+        android:id="@+id/maxInterestTV"
+        android:layout_alignTop="@+id/interestSeekBar"
+        android:layout_alignEnd="@+id/interestSeekBar"
+        android:textColor="@color/resultColor"
+        android:textSize="10dp" />
+</RelativeLayout>

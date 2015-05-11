@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Mortgage Calculator</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="AmntBorrow">Amount Borrowed</string>
+    <string name="textHint">Enter the loan amount</string>
+    <string name="interest">Interest:</string>
+
+    <string name="TermText">Loan Term</string>
+
+    <string name="year15">15</string>
+    <string name="year20">20</string>
+    <string name="year30">30</string>
+
+    <string name="taxes">Taxes and Insurance</string>
+
+    <string name="taxes_insurance_include">Include Taxes and Insurance</string>
+
+    <string name="calc">Calculate    Payment</string>
+
+    <string name="Result">Monthly Payment :</string>
+    <string name="minInterest">0.0%</string>
+    <string name="maxInterest">20.00%</string>
+    
+    <color name="labelColor">#ffff792d</color>
+    <color name="backgroundColor">#ff000000</color>
+    <color name="textColor">#ff148b77</color>
+    <color name="resultColor">#fffffffb</color>
+
+</resources>
